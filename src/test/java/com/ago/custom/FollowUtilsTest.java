@@ -22,12 +22,13 @@ public class FollowUtilsTest {
 
     @Test
     public void test(){
-        for(int i = 1 ; i< 11 ; i++){
-            FollowUtils.addOrRelease(String.valueOf(i), String.valueOf(10 - i));
-            if(i == 5){
-                break;
-            }
-        }
+//        for(int i = 1 ; i< 11 ; i++){
+//            FollowUtils.addOrRelease(String.valueOf(i), String.valueOf(10 - i));
+//            if(i == 5){
+//                break;
+//            }
+//        }
+        FollowUtils.addOrRelease(String.valueOf(6), String.valueOf(1));
     }
 
 

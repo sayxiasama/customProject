@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @EnableAsync
 @SpringBootApplication
-@MapperScan(basePackages = "com.ago.custom.business.*.dao")
+@MapperScan(basePackages = {"com.ago.custom.business.*.dao","com.ago.custom.testdboperation"})
 public class CustomDemoApplication implements InitializingBean {
 
     @Autowired
