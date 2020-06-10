@@ -26,7 +26,7 @@ public class AsyncConfig {
     private static final int QUEUE_CAPACITY = 100;
 
     @Bean
-    public Executor taskExecutor(){
+    public Executor taskExecutor() {
         //Spring默认核心线程数量为1 , 最大线程容量 与 线程队列容量不受限制
         ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
         //最大核心线程
@@ -44,12 +44,12 @@ public class AsyncConfig {
     }
 
     @PostConstruct
-    public void init(){
+    public void init() {
         System.out.println("taskExecutor set finish");
     }
 
     @PreDestroy
-    public void destroy(){
+    public void destroy() {
         System.out.println("taskExecutor destroy");
     }
 }

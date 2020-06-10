@@ -21,7 +21,8 @@ public class FollowUtils {
     private static final String FANS = "FANS_";//粉丝前缀
     private static final String COMMON_KEY = "COMMON_FOLLOWING"; //公共关注
 
-    private static RedisTemplate redisTemplate = (RedisTemplate) ApplicationContextHolder.getBean("redisTemplate", RedisTemplate.class);
+    private static RedisTemplate redisTemplate = (RedisTemplate) ApplicationContextHolder.getInstance().getBean("redisTemplate", RedisTemplate.class);
+
 
     //关注Or取消关注 (0.取消关注 1.关注)
     public static int addOrRelease(String userId, String followingId) {
@@ -72,18 +73,18 @@ public class FollowUtils {
     }
 
     //查询当前用户关注的名单
-    public static Set<String> findFollows(String userId){
-        return getOrDefault(FOLLOWING+userId);
+    public static Set<String> findFollows(String userId) {
+        return getOrDefault(FOLLOWING + userId);
     }
 
     //查询当前用户粉丝
-    public static Set<String> findFans(String userId){
-        return getOrDefault(FANS+userId);
+    public static Set<String> findFans(String userId) {
+        return getOrDefault(FANS + userId);
     }
 
     //查询指定两个id的共同关注
-    public static Set<String> findCommonFollow(String userId , String otherUserId){
-        if(userId == null || otherUserId == null){
+    public static Set<String> findCommonFollow(String userId, String otherUserId) {
+        if (userId == null || otherUserId == null) {
             return new HashSet<>();
         }
 
@@ -95,10 +96,8 @@ public class FollowUtils {
     }
 
 
-
-
-    public static Set<String> getOrDefault(String key){
+    public static Set<String> getOrDefault(String key) {
         Set result = redisTemplate.opsForZSet().reverseRange(key, 0, -1);
-        return result == null? new HashSet<String>():result;
+        return result == null ? new HashSet<String>() : result;
     }
 }

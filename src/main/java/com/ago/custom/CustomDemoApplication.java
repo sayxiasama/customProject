@@ -1,6 +1,8 @@
 package com.ago.custom;
+
 import com.ago.custom.resolveproperties.PropertiesBean;
 import com.ago.custom.resolveproperties.ResolvePropertiesResource;
+import com.ago.custom.zframeextends.ApplicationContextCustom;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +10,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
 
+import javax.swing.*;
+
 
 @EnableAsync
 @SpringBootApplication
-@MapperScan(basePackages = {"com.ago.custom.business.*.dao","com.ago.custom.testdboperation"})
+@MapperScan(basePackages = {"com.ago.custom.business.*.dao", "com.ago.custom.testdboperation"})
 public class CustomDemoApplication implements InitializingBean {
 
     @Autowired
@@ -22,7 +26,11 @@ public class CustomDemoApplication implements InitializingBean {
 
     public static void main(String[] args) {
         SpringApplication.run(CustomDemoApplication.class, args);
+        /*SpringApplication springApplication = new SpringApplication();
+        springApplication.addInitializers(new ApplicationContextCustom());
+        springApplication.run(args);*/
     }
+
 
     @Override
     public void afterPropertiesSet() throws Exception {

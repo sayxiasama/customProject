@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class CustomInterceptorController {
 
     @RequestMapping("oldLogin")
-    public void testOldLogin(){
+    public void testOldLogin() {
         System.out.println("old login method");
     }
 
 
     @RequestMapping("newLogin")
-    public String testNewLogin(){
+    public String testNewLogin() {
         System.out.println("new login method");
         return "new login method";
     }

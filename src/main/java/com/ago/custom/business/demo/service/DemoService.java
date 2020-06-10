@@ -20,7 +20,7 @@ public class DemoService {
     @Autowired
     private DemoDao dao;
 
-    public List<DemoVo> selectVo(){
+    public List<DemoVo> selectVo() {
         return dao.selectVo();
     }
 }

@@ -33,9 +33,9 @@ public class OldLoginInterceptor implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        Long startTime =(Long)request.getAttribute("startTime");
+        Long startTime = (Long) request.getAttribute("startTime");
         System.out.println("afterCompletion ----");
         Long endTime = System.currentTimeMillis();
-        System.out.println("接口用时 :"+ (endTime - startTime));
+        System.out.println("接口用时 :" + (endTime - startTime));
     }
 }

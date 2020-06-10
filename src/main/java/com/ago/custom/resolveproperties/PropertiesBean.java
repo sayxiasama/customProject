@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @Version 1.0
  */
 @Component
-@ConfigurationProperties(prefix="custom")
+@ConfigurationProperties(prefix = "custom")
 @Data
 public class PropertiesBean {
 

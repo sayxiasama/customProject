@@ -21,7 +21,7 @@ public class FollowUtilsTest {
 
 
     @Test
-    public void test(){
+    public void test() {
 //        for(int i = 1 ; i< 11 ; i++){
 //            FollowUtils.addOrRelease(String.valueOf(i), String.valueOf(10 - i));
 //            if(i == 5){
@@ -33,15 +33,15 @@ public class FollowUtilsTest {
 
 
     @Test
-    public void getFinds(){
+    public void getFinds() {
         Set<String> fans = FollowUtils.findFans(String.valueOf(1));
         for (String fan : fans) {
-            System.out.println("fans----:"+fan);
+            System.out.println("fans----:" + fan);
         }
 
         Set<String> follows = FollowUtils.findFollows(String.valueOf(1));
         for (String follow : follows) {
-            System.out.println("follow----:"+follow);
+            System.out.println("follow----:" + follow);
 
         }
     }

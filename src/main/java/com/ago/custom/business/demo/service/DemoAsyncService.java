@@ -42,6 +42,7 @@ public class DemoAsyncService {
                             "Farewell ",
                             "Joker",
                             "Crawl"));
+
     @Async
     public CompletableFuture<List<String>> asyncSelect(String start) {
         logger.info(Thread.currentThread().getName() + "  start this Task");

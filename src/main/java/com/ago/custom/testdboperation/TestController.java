@@ -27,17 +27,17 @@ public class TestController {
     @RequestMapping("/test")
     public String AsyncDemo() {
         CompletableFuture<String> future = null;
-            future = CompletableFuture.supplyAsync(() -> {
-                System.out.println("async start db operation");
-                try {
-                    dao.AsyncSave();
-                    return "async save success";
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    return "dead";
-                }
-            }, executor);
-            future.thenAccept((e) -> System.out.println(e));
-            return "success";
-        }
+        future = CompletableFuture.supplyAsync(() -> {
+            System.out.println("async start db operation");
+            try {
+                dao.AsyncSave();
+                return "async save success";
+            } catch (Exception e) {
+                e.printStackTrace();
+                return "dead";
+            }
+        }, executor);
+        future.thenAccept((e) -> System.out.println(e));
+        return "success";
     }
+}
