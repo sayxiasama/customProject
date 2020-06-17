@@ -1,5 +1,8 @@
 package com.ago.custom;
 
+import com.ago.custom.business.demo.bean.vo.DemoVo;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
 import io.lettuce.core.SetArgs;
@@ -62,12 +65,22 @@ public class LettuceTest {
 
         SetArgs args = SetArgs.Builder.nx().ex(10);
 
-        String result = redisCommands.set("ago", "hello lettuce starter");
-        Assertions.assertThat(result).isEqualToIgnoringCase("OK");
+        DemoVo demoVo = new DemoVo("22", "33");
 
-        String ago =(String) redisCommands.get("ago");
+//        String result = redisCommands.set("ago", "hello lettuce starter");
 
-        System.out.println(ago);
+        String aaa = redisCommands.set("aaa", JSON.toJSONString(demoVo));
+
+
+        Assertions.assertThat(aaa).isEqualToIgnoringCase("OK");
+
+
+        String ago =(String) redisCommands.get("aaa");
+
+        DemoVo vo = JSONObject.parseObject(ago, DemoVo.class);
+
+        System.out.println(vo.toString());
+
     }
 
 
