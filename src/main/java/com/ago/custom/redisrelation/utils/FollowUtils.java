@@ -21,7 +21,7 @@ public class FollowUtils {
     private static final String FANS = "FANS_";//粉丝前缀
     private static final String COMMON_KEY = "COMMON_FOLLOWING"; //公共关注
 
-    private static RedisTemplate redisTemplate = (RedisTemplate) ApplicationContextHolder.getInstance().getBean("redisTemplate", RedisTemplate.class);
+    private static RedisTemplate redisTemplate = (RedisTemplate) ApplicationContextHolder.getBean("redisTemplate", RedisTemplate.class);
 
 
     //关注Or取消关注 (0.取消关注 1.关注)

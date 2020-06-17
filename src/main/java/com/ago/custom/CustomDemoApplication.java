@@ -1,5 +1,7 @@
 package com.ago.custom;
 
+import com.ago.custom.quartz.schedule.CronTaskRegistrar;
+import com.ago.custom.quartz.task.ScheduleRunnable;
 import com.ago.custom.resolveproperties.PropertiesBean;
 import com.ago.custom.resolveproperties.ResolvePropertiesResource;
 import com.ago.custom.zframeextends.ApplicationContextCustom;
@@ -24,6 +26,9 @@ public class CustomDemoApplication implements InitializingBean {
     @Autowired
     private ResolvePropertiesResource resolve;
 
+    @Autowired
+    private CronTaskRegistrar cronTaskRegistrar;
+
     public static void main(String[] args) {
         SpringApplication.run(CustomDemoApplication.class, args);
         /*SpringApplication springApplication = new SpringApplication();
@@ -38,4 +43,6 @@ public class CustomDemoApplication implements InitializingBean {
 
         System.out.println(resolve.toString());
     }
+
+
 }

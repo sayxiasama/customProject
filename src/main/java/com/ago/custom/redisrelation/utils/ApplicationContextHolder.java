@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 public class ApplicationContextHolder implements ApplicationContextAware {
 
     @Autowired
-    private ApplicationContext applicationContext;
+    private static  ApplicationContext applicationContext;
 
     private static ApplicationContextHolder instance = null;
 
@@ -31,27 +31,31 @@ public class ApplicationContextHolder implements ApplicationContextAware {
 
     }
 
-    public static ApplicationContextHolder getInstance() {
-        if (instance == null) {
-            synchronized (ApplicationContextHolder.class) {
-                if (instance == null) {
-                    return new ApplicationContextHolder();
-                }
-            }
-        }
-        return instance;
-    }
+//    public static ApplicationContextHolder getInstance() {
+//        if (instance == null) {
+//            synchronized (ApplicationContextHolder.class) {
+//                if (instance == null) {
+//                    return new ApplicationContextHolder();
+//                }
+//            }
+//        }
+//        return instance;
+//    }
 
-    public Object getBean(Class clazzType) {
+    public static Object getBean(Class clazzType) {
         Object bean = applicationContext.getBean(clazzType);
         return bean;
     }
 
 
-    public Object getBean(String beanName, Class clazzType) {
+    public static Object getBean(String beanName, Class clazzType) {
         Object bean = applicationContext.getBean(beanName, clazzType);
         return bean;
     }
 
+    public static Object getBean(String beanName){
+        Object bean = applicationContext.getBean(beanName);
+        return bean;
+    }
 
 }
