@@ -1,7 +1,7 @@
 package com.ago.custom;
 
-import com.ago.custom.quartz.schedule.CronTaskRegistrar;
-import com.ago.custom.quartz.task.ScheduleRunnable;
+import com.ago.custom.schedule.schedule.CronTaskRegistrar;
+import com.ago.custom.schedule.task.ScheduleRunnable;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

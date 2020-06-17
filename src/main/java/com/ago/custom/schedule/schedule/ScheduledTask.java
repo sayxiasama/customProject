@@ -1,4 +1,4 @@
-package com.ago.custom.quartz.schedule;
+package com.ago.custom.schedule.schedule;
 
 import java.util.concurrent.ScheduledFuture;
 

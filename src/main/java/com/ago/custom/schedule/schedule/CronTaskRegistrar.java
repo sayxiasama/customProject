@@ -1,20 +1,14 @@
-package com.ago.custom.quartz.schedule;
+package com.ago.custom.schedule.schedule;
 
 import com.google.common.collect.Maps;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.TaskScheduler;
-import org.springframework.scheduling.Trigger;
-import org.springframework.scheduling.TriggerContext;
 import org.springframework.scheduling.config.CronTask;
-import org.springframework.scheduling.config.Task;
-import org.springframework.scheduling.config.TriggerTask;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
-import java.util.Date;
 import java.util.Map;
-import java.util.concurrent.ScheduledFuture;
 
 /**
  * @ClassName:ScheduleRegisterar

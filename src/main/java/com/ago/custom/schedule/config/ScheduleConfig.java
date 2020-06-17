@@ -1,4 +1,4 @@
-package com.ago.custom.quartz.config;
+package com.ago.custom.schedule.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.ago.custom.quartz;
+package com.ago.custom.schedule;
 
 import org.springframework.stereotype.Component;
 
@@ -19,7 +19,7 @@ public class TestBean {
     public void taskWithParams(String tenantCode) {
         System.out.println("这是有参示例任务：" + tenantCode +"-");
     }
-    
+
     public void taskNoParams() {
         System.out.println("这是无参示例任务");
     }

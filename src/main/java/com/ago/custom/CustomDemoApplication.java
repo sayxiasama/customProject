@@ -1,18 +1,14 @@
 package com.ago.custom;
 
-import com.ago.custom.quartz.schedule.CronTaskRegistrar;
-import com.ago.custom.quartz.task.ScheduleRunnable;
+import com.ago.custom.schedule.schedule.CronTaskRegistrar;
 import com.ago.custom.resolveproperties.PropertiesBean;
 import com.ago.custom.resolveproperties.ResolvePropertiesResource;
-import com.ago.custom.zframeextends.ApplicationContextCustom;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
-
-import javax.swing.*;
 
 
 @EnableAsync
