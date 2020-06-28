@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 public class ApplicationContextHolder implements ApplicationContextAware {
 
     @Autowired
-    private static  ApplicationContext applicationContext;
+    private static ApplicationContext applicationContext;
 
     private static ApplicationContextHolder instance = null;
 
@@ -53,7 +53,7 @@ public class ApplicationContextHolder implements ApplicationContextAware {
         return bean;
     }
 
-    public static Object getBean(String beanName){
+    public static Object getBean(String beanName) {
         Object bean = applicationContext.getBean(beanName);
         return bean;
     }

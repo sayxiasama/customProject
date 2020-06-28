@@ -44,7 +44,8 @@ public class DemoController {
 //    private  static RedisTemplate redisTemplate = (RedisTemplate) ApplicationContextHolder.getInstance().getBean("redisTemplate", RedisTemplate.class);
 
     @RequestMapping("/select")
-    public List<DemoVo> selectVo() {
+    public List<DemoVo> selectVo(String index) {
+        System.out.println(index);
         return service.selectVo();
     }
 

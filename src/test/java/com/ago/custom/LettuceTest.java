@@ -59,7 +59,7 @@ public class LettuceTest {
 
 
     @Test
-    public void testLettuceStart(){
+    public void testLettuceStart() {
 
         RedisCommands redisCommands = redisConnection.sync();
 
@@ -75,7 +75,7 @@ public class LettuceTest {
         Assertions.assertThat(aaa).isEqualToIgnoringCase("OK");
 
 
-        String ago =(String) redisCommands.get("aaa");
+        String ago = (String) redisCommands.get("aaa");
 
         DemoVo vo = JSONObject.parseObject(ago, DemoVo.class);
 

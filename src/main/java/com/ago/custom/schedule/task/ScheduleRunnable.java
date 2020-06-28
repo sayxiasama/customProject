@@ -36,7 +36,7 @@ public class ScheduleRunnable implements Runnable {
         this.params = params;
     }
 
-    public String getExpressionStr(){
+    public String getExpressionStr() {
         return (String) this.params[0];
     }
 
@@ -53,12 +53,12 @@ public class ScheduleRunnable implements Runnable {
 
                 Class[] paramCls = new Class[params.length];
 
-                for(int i = 0 ; i < params.length ; i++){
+                for (int i = 0; i < params.length; i++) {
                     paramCls[i] = params[i].getClass();
                 }
 
                 method = targetObject.getClass().getDeclaredMethod(methodName, paramCls);
-            }else{
+            } else {
                 method = targetObject.getClass().getDeclaredMethod(methodName);
             }
             ReflectionUtils.makeAccessible(method);

@@ -24,10 +24,10 @@ public class TestSchedule {
 
 
     @Test
-    public void testTask() throws  InterruptedException{
+    public void testTask() throws InterruptedException {
 
-        ScheduleRunnable scheduleRunnable = new ScheduleRunnable("testBean", "taskWithParams","C10001");
-        cronTaskRegistrar.addTask(scheduleRunnable,"0/3 * * * * ?");
+        ScheduleRunnable scheduleRunnable = new ScheduleRunnable("testBean", "taskWithParams", "C10001");
+        cronTaskRegistrar.addTask(scheduleRunnable, "0/3 * * * * ?");
         System.out.println(scheduleRunnable.getExpressionStr());
         Thread.sleep(3000);
     }

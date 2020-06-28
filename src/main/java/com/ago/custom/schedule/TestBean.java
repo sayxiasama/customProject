@@ -12,12 +12,12 @@ import org.springframework.stereotype.Component;
 @Component("testBean")
 public class TestBean {
 
-    public void taskWithParams(String cronExpression,String tenantCode) {
-        System.out.println("这是有参示例任务：" + tenantCode +"-"+cronExpression);
+    public void taskWithParams(String cronExpression, String tenantCode) {
+        System.out.println("这是有参示例任务：" + tenantCode + "-" + cronExpression);
     }
 
     public void taskWithParams(String tenantCode) {
-        System.out.println("这是有参示例任务：" + tenantCode +"-");
+        System.out.println("这是有参示例任务：" + tenantCode + "-");
     }
 
     public void taskNoParams() {

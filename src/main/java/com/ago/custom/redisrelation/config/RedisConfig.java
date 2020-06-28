@@ -58,11 +58,10 @@ public class RedisConfig {
     }
 
 
-
-    public CacheManager cacheManager(){
+    public CacheManager cacheManager() {
         RedisCacheConfiguration.defaultCacheConfig().serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(keySerializer()))
-        .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(valueSerializer())).disableCachingNullValues()
-        .entryTtl(timeToLive);
+                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(valueSerializer())).disableCachingNullValues()
+                .entryTtl(timeToLive);
 
         RedisCacheManager.RedisCacheManagerBuilder builder = RedisCacheManager.RedisCacheManagerBuilder
                 .fromConnectionFactory(lettuceConnectionFactory).cacheDefaults(RedisCacheConfiguration.defaultCacheConfig())
@@ -74,6 +73,7 @@ public class RedisConfig {
     private RedisSerializer<String> keySerializer() {
         return new StringRedisSerializer();
     }
+
     private RedisSerializer<Object> valueSerializer() {
         // 设置序列化
         Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<Object>(

@@ -1,8 +1,8 @@
 package com.ago.custom.resolveproperties;
 
-import lombok.Data;
+import lombok.Getter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.context.properties.ConstructorBinding;
 
 /**
  * @ClassName:PropertiesBean
@@ -11,12 +11,41 @@ import org.springframework.stereotype.Component;
  * @Author:Ago
  * @Version 1.0
  */
-@Component
-@ConfigurationProperties(prefix = "custom")
-@Data
+@ConstructorBinding
+@ConfigurationProperties(prefix ="custom")
+@Getter
 public class PropertiesBean {
 
-    private String name;
+    private final String name;
 
-    private String age;
+    private  String age;
+
+    private final InnerClass innerClass;
+
+    public PropertiesBean(String name,InnerClass innerClass) {
+        this.name = name;
+//        this.age = age;
+        this.innerClass = innerClass;
+    }
+
+
+    @Getter
+    public static class InnerClass{
+        private String sex;
+
+        private String des;
+
+        public InnerClass(String sex , String des){
+            this.sex = sex;
+            this.des = des;
+        }
+        public String toString(){
+            return this.sex + this.des;
+        }
+    }
+
+    public String toString(){
+
+        return "name"+this.getName()+"\n"+"age"+this.getAge()+"\n"+"sex"+this.innerClass.getSex()+"des"+this.innerClass.getDes();
+    }
 }
